@@ -64,7 +64,7 @@
     <script>
     "use strict";
     document.getElementById('crowForm').addEventListener('submit', function(e) {
-        e.preventDefault(); // ← главное: не даём форме перезагрузить страницу
+        e.preventDefault();
 
         const numInput = document.getElementById('num');
         const num = parseInt(numInput.value);

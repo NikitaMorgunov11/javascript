@@ -2,7 +2,7 @@
 
 import {
     fib
-  } from './functions.js';
+  } from './fun.js';
 
 /**
  * Возвращает дробную часть числа.
@@ -16,7 +16,7 @@ export function getDecimal(num) {
 
 
 /**
- * Нормализует URL, добавляя префикс https://.
+ * Нормализует URL, добавляя https://.
  * @param {string} url - Адрес сайта.
  * @returns {string} Нормализованный URL.
  */

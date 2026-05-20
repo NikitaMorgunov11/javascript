@@ -87,6 +87,14 @@ let obj = {
     }
 };
 
+const jsonStr = JSON.stringify(obj, null, 2);
+console.log("JSON представление объекта obj:");
+console.log(jsonStr);
+
+const obj2 = JSON.parse(jsonStr);
+console.log("Объект после декодирования:", obj2);
+console.log("Равенство className:", obj.className === obj2.className);
+
 // Функция для получения количества секунд с начала текущего дня
 function getSecondsToday() {
     let now = new Date();
@@ -102,16 +110,3 @@ function formatDate(date) {
     let year = date.getFullYear().toString().substr(-2);
     return `${day < 10 ? '0' + day : day}.${month < 10 ? '0' + month : month}.${year}`;
 }
-
-// ========== Дополнение для пункта 6 (JSON) ==========
-// Преобразование объекта obj в JSON с отступом 2 пробела и вывод в консоль
-let jsonStr = JSON.stringify(obj, null, 2);
-console.log("JSON представление объекта obj:");
-console.log(jsonStr);
-
-// Декодирование обратно в объект obj2
-let obj2 = JSON.parse(jsonStr);
-console.log("Объект после декодирования:", obj2);
-
-// Проверка равенства свойств (методы не сохраняются, поэтому сравниваем только className)
-console.log("Равенство className:", obj.className === obj2.className);

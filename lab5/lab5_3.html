@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Text</title>
+  </head>
+  <body>
+    <input type="button" id="hider" value="Спрятать текст">
+    <div id="text">Текст</div>
+    <script>
+      const button = document.getElementById('hider');
+      const textDiv = document.getElementById('text');
+      
+      button.addEventListener('click', function() {
+        if (textDiv.style.display === 'none') {
+          textDiv.style.display = 'block';
+          button.value = 'Спрятать текст';
+        } else {
+          textDiv.style.display = 'none';
+          button.value = 'Показать текст';
+        }
+      });
+    </script>
+    <div at-magnifier-wrapper>
+    <div class="at-theme-dark">
+    <div class="at-base notranslate" translate="no"> == $0
+    <div class="EuwGd" style="top: 0px; left: 0px;"></div>
+    </div>
+    </div>
+  </body>
+</html>

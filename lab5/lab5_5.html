@@ -71,17 +71,16 @@
     </div>
 
     <script>
-        'use strict';
+    'use strict';
 
-        const removeButtons = document.querySelectorAll('.remove-button');
+    const removeButtons = document.querySelectorAll('.remove-button');
 
-        removeButtons.forEach(function (button) {
-            button.addEventListener('click', function () {
-                button.parentNode.style.display = 'none';
-            });
+    removeButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            button.parentNode.remove();
         });
-
-    </script>
+    });
+</script>
 
 </body>
 

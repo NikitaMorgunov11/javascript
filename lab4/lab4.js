@@ -1,25 +1,29 @@
 // Класс Book выводит книгу с заголовком, годом публикации и ценой
 class Book {
-    // Поле price
+    // Приватное поле price
     #price;
 
     constructor(title, pubYear, price) {
+        // Замыкание для хранения title без защищённого/приватного имени
+        let _title;
+        Object.defineProperty(this, 'title', {
+            get() {
+                return _title;
+            },
+            set(value) {
+                if (value === "") {
+                    throw new Error("Заголовок не может быть пустым");
+                }
+                _title = value;
+            },
+            enumerable: true,
+            configurable: true
+        });
+
+        // Инициализация через сеттеры
         this.title = title;
         this.pubYear = pubYear;
         this.#price = price;
-    }
-
-    // Геттер для получения заголовка книги
-    get title() {
-        return this._title;
-    }
-
-    // Сеттер для установки заголовка книги
-    set title(value) {
-        if (value === "") {
-            throw new Error("Заголовок не может быть пустым");
-        }
-        this._title = value;
     }
 
     // Геттер для получения года публикации книги
@@ -50,7 +54,7 @@ class Book {
 
     // Метод для вывода заголовка и цены книги в консоль
     show() {
-        console.log(`${this._title}: ${this.#price}`);
+        console.log(`${this.title}: ${this.#price}`);
     }
 
     // Статический метод для сравнения книг по году публикации

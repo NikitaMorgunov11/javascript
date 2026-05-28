@@ -113,6 +113,12 @@
                 assert.isFalse(isEmpty({ [Symbol()]: true }));
                 console.log("Непустой объект: false");
             });
+
+            it("должен вернуть false для объекта с неперечисляемым свойством", function () {
+                let objWithNonEnum = Object.defineProperty({}, 'name', { value: 'John' });
+                assert.isFalse(isEmpty(objWithNonEnum));
+                console.log("Объект с неперечисляемым свойством: false");
+            });
         });
 
         describe("addClass и removeClass", function () {

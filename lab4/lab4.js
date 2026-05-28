@@ -4,17 +4,16 @@ class Book {
     #price;
 
     constructor(title, pubYear, price) {
-        // Замыкание для хранения title без защищённого/приватного имени
-        let _title;
+        let storedTitle;
         Object.defineProperty(this, 'title', {
             get() {
-                return _title;
+                return storedTitle;
             },
             set(value) {
                 if (value === "") {
                     throw new Error("Заголовок не может быть пустым");
                 }
-                _title = value;
+                storedTitle = value;
             },
             enumerable: true,
             configurable: true
